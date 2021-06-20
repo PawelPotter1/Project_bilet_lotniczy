@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { WeatherdataService} from '../../../services/weatherdata.service'
-import { Weathermodel } from '../models/weathermodel'
+import { Weathermodel } from '../../../Models/weathermodel'
 
 @Component({
   selector: 'app-selection',

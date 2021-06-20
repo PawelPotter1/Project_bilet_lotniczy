@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup } from '@angular/forms';
 import { WeatherdataService } from 'src/app/services/weatherdata.service';
-import { Weathermodel} from './models/weathermodel'
+import { Weathermodel} from '../../Models/weathermodel'
 
 @Component({
   selector: 'app-weather',

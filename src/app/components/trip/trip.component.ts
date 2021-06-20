@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlightdetailService} from '../../services/flightdetail.service';
-import { flightDetailsModel } from '../searchflight/flightDetailsModel';
+import { flightDetailsModel } from '../../Models/flightDetailsModel';
+import { Timetable } from '../../Models/priceModel'
 
 
 @Component({
@@ -26,6 +27,14 @@ export class TripComponent implements OnInit {
     this.OnScreen.bagage = this.flightdetails.bagage;
   }
   
+  // TimeTableOnScreen: Timetable = {
+  //   price: 0,
+  //   airplane: 0,
+  //   aPlace: 'Warszawa',
+  //   dPlace: 'Wrocław',
+  //   flighttime: 0
+  // }
+
   OnScreen: flightDetailsModel = {
     departurePlace: 'Wrocław',
     arrivalPlace: '',
@@ -34,6 +43,7 @@ export class TripComponent implements OnInit {
     persons: 0,
     senior: false,
     kid: false,
+    zone: 0,
     bagage: '',
     price: 0
   }

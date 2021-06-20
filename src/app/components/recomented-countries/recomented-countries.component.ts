@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CountryDataService} from '../../services/country-data.service';
 import { Router } from '@angular/router';
-import { countryDetails } from '../data-country/data';
+import { countryDetails } from '../../Models/data';
 import { DeclarationListEmitMode } from '@angular/compiler';
 //import { countryDetails } from '../data-country/data';
 

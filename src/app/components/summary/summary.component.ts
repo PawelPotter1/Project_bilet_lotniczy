@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FlightdetailService } from 'src/app/services/flightdetail.service';
-import { flightDetailsModel } from '../searchflight/flightDetailsModel';
+import { flightDetailsModel } from '../../Models/flightDetailsModel';
 
 let departurePlace: string;
 let arrivalPlace: string;
@@ -56,6 +56,7 @@ countPrice(departurePlace, arrivalPlace, ticets, discountKid, discountSenior, ba
     persons: 0,
     senior: false,
     kid: false,
+    zone: 0,
     bagage: '',
     price: 0
   }

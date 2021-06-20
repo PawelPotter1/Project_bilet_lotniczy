@@ -20,6 +20,7 @@ import { TripComponent } from './components/trip/trip.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { SimpleloginComponent } from './simplelogin/simplelogin.component';
 import { SummaryComponent } from './components/summary/summary.component';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { SummaryComponent } from './components/summary/summary.component';
     TodosModule,
     FormsModule, HttpClientModule,
     AppRoutingModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    NgbModule
   ],
   providers: [WeatherdataService],
   bootstrap: [AppComponent]

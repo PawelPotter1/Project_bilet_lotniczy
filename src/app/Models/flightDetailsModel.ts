@@ -6,6 +6,7 @@ export class flightDetailsModel {
   persons: number
   senior: boolean
   kid: boolean
+  zone: number
   bagage: string
   price: number
   }

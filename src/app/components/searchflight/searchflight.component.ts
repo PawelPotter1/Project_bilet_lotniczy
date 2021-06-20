@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import {FlightdetailService} from '../../services/flightdetail.service';
 import {Router} from '@angular/router';
-import { flightDetailsModel } from './flightDetailsModel';
+import { flightDetailsModel } from '../../Models/flightDetailsModel';
 
 let a: number = 0;
-let b: number = 0;
 
 @Component({
   selector: 'app-searchflight',
@@ -19,8 +18,7 @@ export class SearchflightComponent implements OnInit {
   ngOnInit() {}
 
   ngDoCheck(){
-if (this.Input.departurePlace!==''||this.Input.arrivalPlace!=='')
-this.airplane = this.checkAirplane(this.Input.departurePlace, this.Input.arrivalPlace!=='')
+    this.checkAirplane();
   }
 
   departurePlaces = [
@@ -41,7 +39,8 @@ this.airplane = this.checkAirplane(this.Input.departurePlace, this.Input.arrival
   // arrivalDateInput;
   // personsInput:number
   isValid:boolean = true;
-  today: number = Date.now();
+  today: number 
+  //= Date.now();
   airplane: number = 0;
 
   Input: flightDetailsModel = {
@@ -52,24 +51,19 @@ this.airplane = this.checkAirplane(this.Input.departurePlace, this.Input.arrival
     persons: 0,
     senior: false,
     kid: false,
+    zone: 0,
     bagage: '',
     price: 0
   }
+  zoneDeparture
+  zoneArrival
 
-   checkAirplane(placeDeparture, arrivalPlace) {
-     for(let i=0;i++;this.departurePlaces.length) {
-       if (this.departurePlaces[i].city==placeDeparture) 
-       a = this.departurePlaces[i].local;
-     }
-     for(let i=0;i++;this.arrivalPlaces.length) {
-      if (this.arrivalPlaces[i].city==arrivalPlace) 
-       if (a<this.arrivalPlaces[i].local) {a=this.arrivalPlaces[i].local};
-     }
-  //   console.log("suma: "+a)
-  //   this.flightdetails.airplane = a;
-  //   this.airplane = a;
-    return a
-  }
+  checkAirplane() {
+  // this.zoneDeparture = this.departurePlaces.map(item => {if(item.city = this.Input.departurePlace) return item.local})
+  // this.zoneArrival = this.arrivalPlaces.map(item => {if(item.city = this.Input.arrivalPlace) return item.local})
+    console.log(this.zoneDeparture)
+}
+
 
   save(){
     this.flightdetails.placeOfDeparture = this.Input.departurePlace;
@@ -77,7 +71,7 @@ this.airplane = this.checkAirplane(this.Input.departurePlace, this.Input.arrival
     this.flightdetails.dateOfDeparture = this.Input.departureDate;
     this.flightdetails.dateOfArrival = this.Input.arrivalDate;
     this.flightdetails.personsOfFlight = this.Input.persons;
-    this.flightdetails.airplane = 1
+    this.flightdetails.airplane = 0
     if(this.Input.departurePlace == '' || this.Input.arrivalPlace=='') 
         {  this.isValid = false; alert("Nie wypełniłeś miejsca startu lub lądowania") }
     if(this.Input.departurePlace == this.Input.arrivalPlace) 
